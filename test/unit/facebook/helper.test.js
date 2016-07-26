@@ -22,7 +22,7 @@ describe('facebook-helper', () => {
       friends.should.be.Array;
       friends[0].should.have.keys("name", "id");
       
-      friends.forEach(function(e, i){
+      friends.forEach((e, i) => {
         e.facebookId = e.id;
         e.id = undefined;
       });
