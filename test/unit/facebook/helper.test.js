@@ -1,7 +1,7 @@
 import FacebookHelper from '../../../src/facebook/helper.js'
 import task1_initModel from '../../../src/database/task1';
 
-describe.only('facebook-helper', () => {
+describe('facebook-helper', () => {
   let facebookHelper = null;
   let models = null;
 
@@ -36,7 +36,6 @@ describe.only('facebook-helper', () => {
   it("get friends list in database", async (done) => {
     try {
       let friends = await models.Friend.findAll();
-      console.log(friends[0].toJSON());
       friends.should.be.Array;
       friends[0].toJSON().should.has.keys(
         'id',
